@@ -2,7 +2,7 @@ import typing
 import numpy as np
 from sklearn.metrics import mean_absolute_percentage_error, r2_score, mean_squared_error
 
-THRESHOLD = 0.15
+THRESHOLD = 0.14
 NEGATIVE_WEIGHT = 1.1
 
 def deviation_metric_one_sample(y_true: typing.Union[float, int], y_pred: typing.Union[float, int]) -> float:
