@@ -93,7 +93,7 @@ class BenchmarkModel():
         """
         if self.__is_fitted:
             predictions = self.pipeline.predict(X)
-            corrected_price = predictions * (1 + self.corr_coef)
+            corrected_price = predictions * (0.9 + self.corr_coef)
             return corrected_price
         else:
             raise NotFittedError(
