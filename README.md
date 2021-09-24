@@ -1,6 +1,3 @@
-# Data
-https://doc-28-28-drive-data-export.googleusercontent.com/download/jpd2tpdd9nun7s8c317tt1rv10b0560d/b9jn056u6hs71mqd50i4k4pq68u40eed/1632505500000/5ebddcd9-8893-468c-ae52-0cf11d5a40b9/100327154754341176632/ADt3v-M0TJQfU4w63OmKEKZKGbGdFkFATXr2Fx32C0bLuaYNZjU11wWlyss8DZtkgFjebQKzDZTpJ4xl1QxYhctn0f5GZC4ajfV9mAnC17CNsz3acfYwH6pbwOM8DSJoWobcZYYo4qYh-kB1LpcIvrCaM8-e9cjwM7laWGR9sA7oqphOvVWYFV3AIan837sSvxOVnfpb-T8YgA_wPWCAhgqz8xy9ide2_V-Af1zdl2Klk-CJ9vv2Anur2lJOlKzEJ4qIG8OwJgt1cbpEqyeLNiibRW07sh-xUdPfb7iC1t0I6_ZUpspgiOtUufMMBGESx910bCz82VLD?nonce=8saa2uej1k9fo&user=100327154754341176632&authuser=0&hash=lvv6rou3opvo181a6ejo0sf7dod7k1ut
-
 # Описание
 Это бенчмарк скрипт для хакатона от Раййфайзенбанка по оценке коммерческой недвижимости
 Бенчмарк состоит из:
@@ -11,52 +8,20 @@ https://doc-28-28-drive-data-export.googleusercontent.com/download/jpd2tpdd9nun7
 
 # Запуск
 ## Вариант с poetry
-**Крайне рекомендую именно установку с poetry** - poetry это новый packet manager для питона, и он гораздо круче чем pip. Разобравшись с ним (а это очень-очень просто), думаю, вы будете необычайно счастливы.
-Для запуска необходимо:
-<ol>
-    <li> убедиться, что у вас стоит python3.6 или выше </li>
-    <li> установить poetry:
+```sh
+pip install poetry 
+poetry  install  
+```
 
-     pip install poetry 
-</li>
-    <li> установить все нужные пакеты из poetry.lock:
-    <ol>
-        <li> по умолчанию poetry создает виртуальное окружение - это лучше для изоляции от вашей системы и рекомендуем именно такой способ установи пакетов:
-            
-         poetry  install  
-</li>
-        <li> если хочется установить без виртуального окружения, то установить нужно с помощью следующей команды:
-            
-        poetry config virtualenvs.create false && poetry  install
-</li>
-    </ol> 
-    </li>
-    <li> запустить обучение
+## Запустить обучение
+```sh
+poetry run python3 train.py --train_data <path_to_train_data> --model_path <path_to_pickle_ml_model>
+```
 
-    poetry run python3 train.py --train_data <path_to_train_data> --model_path <path_to_pickle_ml_model>
-</li>
-    <li> запустить предикт
+## Запустить предикт
+```
+poetry run python3 predict.py --model_path <path_to_pickled_model> --test_data <path_to_test_data> --output <path_to_output_csv_file>
+```
 
-    poetry run python3 predict.py --model_path <path_to_pickled_model> --test_data <path_to_test_data> --output <path_to_output_csv_file>
-</li>
-    <li> загрузить полученные результаты в систему </li>
-</ol>
-## Вариант с requirements.txt
-<ol>
-    <li> убедиться, что у вас стоит python3.6 или выше </li>
-    <li> установить зависимости:
-    
-    pip install -r requirements.txt 
-</li>
-    <li> запустить обучение
-
-    python3 train.py --train_data <path_to_train_data> --model_path <path_to_pickle_ml_model>
-</li>
-    <li> запустить предикт
-    
-    python3 predict.py --model_path <path_to_pickled_model> --test_data <path_to_test_data> --output <path_to_output_csv_file>
-</li>
-    <li> загрузить полученные результаты в систему</li>
-</ol>
-
-В репозитории есть своя реализация регуляризованного target encoding (SmoothedTargetEncoding). можно поэкспериментировать с ним
+## Data
+https://doc-28-28-drive-data-export.googleusercontent.com/download/jpd2tpdd9nun7s8c317tt1rv10b0560d/b9jn056u6hs71mqd50i4k4pq68u40eed/1632505500000/5ebddcd9-8893-468c-ae52-0cf11d5a40b9/100327154754341176632/ADt3v-M0TJQfU4w63OmKEKZKGbGdFkFATXr2Fx32C0bLuaYNZjU11wWlyss8DZtkgFjebQKzDZTpJ4xl1QxYhctn0f5GZC4ajfV9mAnC17CNsz3acfYwH6pbwOM8DSJoWobcZYYo4qYh-kB1LpcIvrCaM8-e9cjwM7laWGR9sA7oqphOvVWYFV3AIan837sSvxOVnfpb-T8YgA_wPWCAhgqz8xy9ide2_V-Af1zdl2Klk-CJ9vv2Anur2lJOlKzEJ4qIG8OwJgt1cbpEqyeLNiibRW07sh-xUdPfb7iC1t0I6_ZUpspgiOtUufMMBGESx910bCz82VLD?nonce=8saa2uej1k9fo&user=100327154754341176632&authuser=0&hash=lvv6rou3opvo181a6ejo0sf7dod7k1ut
