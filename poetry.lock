@@ -115,7 +115,7 @@ python-versions = ">=3.6"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.6.1"
-content-hash = "72219898843fe1a7bcd0278a9b27d41661f385604f9b72bfb5bd03c5541304d9"
+content-hash = "33d01f659e78dc7b5de04b4df22006c38eea578f2121ff87ff73f6ae760c4c2c"
 
 [metadata.files]
 joblib = [
