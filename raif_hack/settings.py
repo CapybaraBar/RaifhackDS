@@ -43,7 +43,7 @@ NUM_FEATURES = ['lat', 'lng', 'osm_amenity_points_in_0.001',
 
 MODEL_PARAMS = dict(
             n_estimators=2000,
-            learning_rate=0.006666,
+            learning_rate=0.003456,
             reg_alpha=1,
             num_leaves=40,
             min_child_samples=5,
