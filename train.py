@@ -38,7 +38,7 @@ if __name__ == "__main__":
         logger.info('START train.py')
         args = vars(parse_args())
         logger.info('Load train df')
-        train_df = pd.read_csv(args['d'])
+        train_df = pd.read_csv(args['d'], low_memory=False)
         logger.info(f'Input shape: {train_df.shape}')
         train_df = prepare_categorical(train_df)
 
