@@ -17,13 +17,13 @@ def deviation_metric_one_sample(y_true: typing.Union[float, int], y_pred: typing
     if np.abs(deviation) <= THRESHOLD:
         return 0
     elif deviation <= - 4 * THRESHOLD:
-        return 8 * NEGATIVE_WEIGHT
+        return 9 * NEGATIVE_WEIGHT
     elif deviation < -THRESHOLD:
         return NEGATIVE_WEIGHT * ((deviation / THRESHOLD) + 1) ** 2
     elif deviation < 4 * THRESHOLD:
         return ((deviation / THRESHOLD) - 1) ** 2
     else:
-        return 8
+        return 9
 
 
 def deviation_metric(y_true: np.array, y_pred: np.array) -> float:
